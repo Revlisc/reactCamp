@@ -105,7 +105,11 @@ const minLength = len => val => val && (val.length >= len);
                 <FadeTransform
                     in
                     transformProps={{
-                        exitTransform: 'scale(0.5) translateY(-50%)'
+                        exitTransform: 'scale(0.5) translateY(50%) translateX(75%)',
+                        
+                    }}
+                    fadeProps ={{
+                        enterOpacity: '0.75'
                     }}>
                     <Card>
                         <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
@@ -123,7 +127,7 @@ const minLength = len => val => val && (val.length >= len);
             return(
                 <div className="col-md-5 m-1">
                 <h4>Comments</h4>
-                <Stagger in>
+                <Stagger in duration={600}>
                     {
                         comments.map(comment => {
                             return (
